@@ -10,5 +10,9 @@ public class StickerGenerator {
 
         BufferedImage originalImg = ImageIO.read(inputImage);
 
+        int imgWidth = originalImg.getWidth();
+        int imgHeight = originalImg.getHeight();
+        int newHeight = imgHeight + 200;
+        BufferedImage newImg = new BufferedImage(imgWidth, newHeight, BufferedImage.TRANSLUCENT);
     }
 }
