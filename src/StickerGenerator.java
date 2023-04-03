@@ -2,6 +2,7 @@ import java.awt.Color;
 import java.awt.Font;
 import java.awt.Graphics2D;
 import java.awt.image.BufferedImage;
+import java.io.File;
 import java.io.InputStream;
 
 import javax.imageio.ImageIO;
@@ -31,5 +32,10 @@ public class StickerGenerator {
         var x = (newImg.getWidth() - textWidth) / 2;
         var y = newHeight - 100;
         graphics.drawString(text, x, y);
+
+        File dir = new File("images");
+        if (!dir.exists()) {
+            dir.mkdir();
+        }
     }
 }
