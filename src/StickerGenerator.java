@@ -24,5 +24,12 @@ public class StickerGenerator {
         var font = new Font(Font.SANS_SERIF, Font.BOLD, 64);
         graphics.setColor(Color.YELLOW);
         graphics.setFont(font);
+
+        var text = "TOP";
+        var fontMetrics = graphics.getFontMetrics();
+        var textWidth = fontMetrics.stringWidth(text);
+        var x = (newImg.getWidth() - textWidth) / 2;
+        var y = newHeight - 100;
+        graphics.drawString(text, x, y);
     }
 }
