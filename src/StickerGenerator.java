@@ -1,3 +1,4 @@
+import java.awt.Graphics2D;
 import java.awt.image.BufferedImage;
 import java.io.InputStream;
 
@@ -14,5 +15,8 @@ public class StickerGenerator {
         int imgHeight = originalImg.getHeight();
         int newHeight = imgHeight + 200;
         BufferedImage newImg = new BufferedImage(imgWidth, newHeight, BufferedImage.TRANSLUCENT);
+
+        Graphics2D graphics = (Graphics2D) newImg.getGraphics();
+        graphics.drawImage(originalImg, 0, 0, null);
     }
 }
