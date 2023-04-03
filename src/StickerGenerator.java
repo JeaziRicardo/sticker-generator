@@ -10,7 +10,7 @@ import javax.imageio.ImageIO;
 public class StickerGenerator {
     
 
-    public void generate(InputStream inputImage) throws Exception {
+    public void generate(InputStream inputImage, String stickerName) throws Exception {
 
         BufferedImage originalImg = ImageIO.read(inputImage);
 
@@ -37,5 +37,7 @@ public class StickerGenerator {
         if (!dir.exists()) {
             dir.mkdir();
         }
+
+        ImageIO.write(newImg, "png", new File(dir + "/" + stickerName));
     }
 }
