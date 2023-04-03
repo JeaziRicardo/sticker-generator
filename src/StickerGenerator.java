@@ -1,3 +1,5 @@
+import java.awt.Color;
+import java.awt.Font;
 import java.awt.Graphics2D;
 import java.awt.image.BufferedImage;
 import java.io.InputStream;
@@ -18,5 +20,9 @@ public class StickerGenerator {
 
         Graphics2D graphics = (Graphics2D) newImg.getGraphics();
         graphics.drawImage(originalImg, 0, 0, null);
+
+        var font = new Font(Font.SANS_SERIF, Font.BOLD, 64);
+        graphics.setColor(Color.YELLOW);
+        graphics.setFont(font);
     }
 }
